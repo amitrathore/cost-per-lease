@@ -21,7 +21,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-meta">
         <span>© 2026 Cost Per Lease</span>
-        <span>Founded by Amit Rathore.</span>
+        <span>Occupancy Intelligence by Amit Rathore.</span>
       </div>
     </footer>
   );
