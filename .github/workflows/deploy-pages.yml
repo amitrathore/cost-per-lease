@@ -26,8 +26,8 @@ jobs:
       - run: npm ci
       - run: npm run build:pages
         env:
-          NEXT_PUBLIC_BASE_PATH: /cost-per-lease
-          NEXT_PUBLIC_SITE_URL: https://amitrathore.github.io/cost-per-lease
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: https://costperlease.com
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

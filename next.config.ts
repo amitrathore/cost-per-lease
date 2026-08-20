@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const pagesBasePath = process.env.GITHUB_ACTIONS === "true" ? "/cost-per-lease" : "";
+const pagesBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
