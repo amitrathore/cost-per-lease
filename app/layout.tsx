@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "leasing operations",
     "property performance",
   ],
-  authors: [{ name: "Cost Per Lease" }],
+  authors: [{ name: "Amit Rathore", url: "https://costperlease.com/author/" }],
   openGraph: {
     title,
     description,

@@ -1,3 +1,7 @@
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
+import Link from "next/link";
+
 const metricLayers = [
   {
     number: "01",
@@ -73,23 +77,7 @@ function ArrowIcon() {
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Cost Per Lease home">
-          <span className="brand-mark" aria-hidden="true">
-            C<span>÷</span>L
-          </span>
-          <span className="brand-name">Cost Per Lease</span>
-        </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#framework">Framework</a>
-          <a href="#intelligence">Intelligence</a>
-          <a href="#book">Book</a>
-          <a href="#standard">The Standard</a>
-        </nav>
-        <a className="header-cta" href="#briefing">
-          Join the briefing <ArrowIcon />
-        </a>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
@@ -106,6 +94,9 @@ export default function Home() {
             Cost Per Lease is a new economic framework for connecting demand,
             leasing, retention, revenue, and NOI—built for the people who own
             and operate occupied assets.
+          </p>
+          <p className="hero-byline">
+            Founded and written by <Link href="/author/">Amit Rathore</Link>
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#framework">
@@ -328,27 +319,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <div className="footer-brand">
-          <span className="brand-mark footer-mark" aria-hidden="true">
-            C<span>÷</span>L
-          </span>
-          <p>
-            An open research initiative advancing the economics of profitable
-            occupancy.
-          </p>
-        </div>
-        <div className="footer-links">
-          <a href="#framework">Framework</a>
-          <a href="#book">Book</a>
-          <a href="#standard">Standard</a>
-          <a href="#briefing">Briefing</a>
-        </div>
-        <div className="footer-meta">
-          <span>© 2026 Cost Per Lease</span>
-          <span>Built for better occupancy.</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
