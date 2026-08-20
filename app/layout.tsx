@@ -4,9 +4,13 @@ import "./globals.css";
 const title = "Cost Per Lease — The New Economics of Occupancy";
 const description =
   "The open framework for measuring and improving profitable occupancy. Explore the Cost Per Lease standard, book, research, benchmarks, and Occupancy Intelligence.";
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://costperlease.com"
+).replace(/\/$/, "");
+const publicPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://costperlease.com"),
+  metadataBase: new URL(siteUrl),
   title,
   description,
   keywords: [
@@ -21,11 +25,11 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://costperlease.com",
+    url: siteUrl,
     siteName: "Cost Per Lease",
     images: [
       {
-        url: "/og.png",
+        url: `${siteUrl}/og.png`,
         width: 1200,
         height: 630,
         alt: "Cost Per Lease — Measure what occupancy costs. Optimize what it earns.",
@@ -38,11 +42,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.png"],
+    images: [`${siteUrl}/og.png`],
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    shortcut: "/favicon.svg",
+    icon: [{ url: `${publicPath}/favicon.svg`, type: "image/svg+xml" }],
+    shortcut: `${publicPath}/favicon.svg`,
   },
 };
 
