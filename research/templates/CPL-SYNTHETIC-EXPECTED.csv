@@ -1,0 +1,19 @@
+metric,expected_value,unit,tolerance,derivation
+average_occupied_units,268.000000,units,0.000001,(266+270)/2
+media_cost,33450.000000,USD,0.01,18600+12450+2400
+demand_generation_cost,56450.000000,USD,0.01,media cost plus agency events technology labor and other demand
+fully_loaded_new_lease_cost,131950.000000,USD,0.01,demand generation plus leasing labor commissions technology and concessions
+economic_new_lease_cost,240450.000000,USD,0.01,fully loaded plus vacancy and turnover
+renewal_cost,17800.000000,USD,0.01,renewal communications labor technology and incentives
+total_occupancy_cost,258250.000000,USD,0.01,economic new lease cost plus renewal cost
+media_cpl,796.428571,USD per new lease,0.01,33450/42
+acquisition_cpl,1344.047619,USD per new lease,0.01,56450/42
+fully_loaded_new_lease_cpl,3141.666667,USD per new lease,0.01,131950/42
+economic_new_lease_cpl,5725.000000,USD per new lease,0.01,240450/42
+renewal_cpl,349.019608,USD per renewal,0.01,17800/51
+cost_per_occupied_unit,963.619403,USD per occupied unit,0.01,258250/268
+attribution_coverage,0.833333,ratio,0.0001,35/42
+occupancy_rate_begin,0.936620,ratio,0.0001,266/284
+occupancy_rate_end,0.950704,ratio,0.0001,270/284
+renewal_share,0.548387,ratio,0.0001,51/(42+51)
+noi_margin,0.638794,ratio,0.0001,1123000/1758000

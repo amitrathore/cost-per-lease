@@ -33,6 +33,8 @@ test("server-renders the Cost Per Lease publication", async () => {
   assert.match(html, /Profitable occupancy is/);
   assert.match(html, /Occupancy Intelligence/);
   assert.match(html, /The open book/);
+  assert.match(html, /reported alongside Renewal CPL/);
+  assert.doesNotMatch(html, /incremental leases/);
   assert.match(html, /tally\.so\/embed\/Zjbee0/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });

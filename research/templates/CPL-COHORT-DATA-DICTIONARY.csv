@@ -1,0 +1,43 @@
+field_name,section,required,data_type,unit,allowed_values,definition,validation,example
+firm_code,Identity,Yes,Text,None,Assigned by CPL,Random cohort firm code stored separately from legal identity,Must match issued code,FIRM-07
+property_code,Identity,Yes,Text,None,Assigned by CPL,Random property code unique within cohort,Must match issued code,PROP-07-03
+quarter_end,Period,Yes,Date,YYYY-MM-DD,Calendar quarter ends,Last day of completed calendar quarter,Must be quarter end and unique per property,2026-06-30
+market_tier,Property,Yes,Category,None,Primary|Secondary|Tertiary,Participant-confirmed market classification,Must use allowed value,Primary
+asset_class,Property,Yes,Category,None,A|B|C,Participant-confirmed operating asset class,Must use allowed value,B
+total_units,Property,Yes,Integer,Units,Positive integer,Total rentable units in the property,Greater than zero and changes explained,284
+property_age_years,Property,No,Decimal,Years,Zero or greater,Years since original delivery at quarter end,Zero or greater,18
+stabilized_flag,Property,Yes,Boolean,None,TRUE|FALSE,Whether property was stabilized for entire quarter,Must be TRUE for cohort inclusion,TRUE
+accounting_basis,Period,Yes,Category,None,Accrual|Cash|Mixed,Basis used for expense inputs,Must use allowed value,Accrual
+begin_occupied_units,Occupancy,Yes,Integer,Units,Zero to total_units,Occupied units on first day of quarter,Cannot exceed total_units,266
+end_occupied_units,Occupancy,Yes,Integer,Units,Zero to total_units,Occupied units on last day of quarter,Cannot exceed total_units,270
+executed_new_leases,Lease events,Yes,Integer,Leases,Zero or greater,New-household executed leases excluding transfers and 30-day cancellations,Nonnegative integer,42
+executed_renewals,Lease events,Yes,Integer,Renewals,Zero or greater,Executed same-unit renewal agreements excluding passive month-to-month,Nonnegative integer,51
+lease_cancellations_30d,Lease events,Yes,Integer,Leases,Zero or greater,Executed new leases cancelled within 30 days,Nonnegative integer,3
+move_outs,Lease events,Yes,Integer,Move-outs,Zero or greater,Resident move-outs completed in quarter,Nonnegative integer,38
+average_vacant_days,Occupancy,No,Decimal,Days,Zero or greater,Average vacant days for turns completed or leased in quarter,Zero or greater,21.4
+attributed_new_leases,Attribution,No,Integer,Leases,Zero to executed_new_leases,Executed new leases with a recorded acquisition source,Cannot exceed executed_new_leases,35
+paid_digital_media,Media cost,Yes,Currency,USD,Zero or documented credit,Paid search social display video and similar digital media,Negative requires note,18600
+ils_expense,Media cost,Yes,Currency,USD,Zero or documented credit,Internet listing service expense allocated to property,Negative requires note,12450
+offline_paid_media,Media cost,Yes,Currency,USD,Zero or documented credit,Direct mail print outdoor radio and other paid offline media,Negative requires note,2400
+marketing_agency_creative,Acquisition cost,Yes,Currency,USD,Zero or documented credit,Agency retainers creative production and campaign services,Negative requires note,7600
+marketing_events_referrals,Acquisition cost,Yes,Currency,USD,Zero or documented credit,Prospect events and new-resident referral payouts,Negative requires note,1800
+marketing_technology,Acquisition cost,Yes,Currency,USD,Zero or documented credit,Marketing automation analytics call tracking and acquisition technology,Negative requires note,3200
+marketing_labor_allocated,Acquisition cost,Yes,Currency,USD,Zero or documented credit,Property and centralized marketing labor allocated to demand generation,Allocation method required when centralized,9800
+other_demand_generation,Acquisition cost,Yes,Currency,USD,Zero or documented credit,Other documented demand-generation expense not classified above,Description required when nonzero,600
+leasing_labor_allocated,Fully loaded cost,Yes,Currency,USD,Zero or documented credit,Property and centralized leasing labor allocated to new leases,Allocation method required when centralized,28400
+leasing_commissions,Fully loaded cost,Yes,Currency,USD,Zero or documented credit,Internal or external commissions for executed new leases,Negative requires note,8400
+leasing_technology_allocated,Fully loaded cost,Yes,Currency,USD,Zero or documented credit,CRM leasing workflow e-signature and application technology allocation,Allocation method required,4900
+new_lease_concessions,Fully loaded cost,Yes,Currency,USD,Zero or documented credit,Face value of concessions attached to executed new leases,Exclude accounting amortization,33800
+vacancy_loss,Economic cost,Yes,Currency,USD,Zero or documented credit,Quarter vacancy loss from property accounting excluding bad debt,Ledger definition required,62800
+turnover_make_ready,Economic cost,Yes,Currency,USD,Zero or documented credit,Turn labor materials vendors cleaning and preparation excluding capital work,Negative requires note,45700
+renewal_communications,Renewal cost,Yes,Currency,USD,Zero or documented credit,Direct renewal outreach and communication expense,Negative requires note,900
+renewal_labor_allocated,Renewal cost,Yes,Currency,USD,Zero or documented credit,Labor allocated to renewal processing and retention activity,Allocation method required when centralized,10600
+renewal_technology_allocated,Renewal cost,Yes,Currency,USD,Zero or documented credit,Renewal and retention technology allocation,Allocation method required,1200
+renewal_incentives,Renewal cost,Yes,Currency,USD,Zero or documented credit,Face value of incentives attached to executed renewals,Separate from new-lease concessions,5100
+average_effective_monthly_rent,Context,Yes,Currency,USD per occupied unit,Zero or greater,Average effective monthly rent for occupied units,Zero or greater,2140
+average_lease_term_months,Context,No,Decimal,Months,Greater than zero,Average term of executed new leases,Greater than zero when supplied,12.4
+property_revenue,Context,Yes,Currency,USD,Zero or documented credit,Total property revenue for quarter using participant accounting,Ledger tie required,1758000
+property_noi,Context,Yes,Currency,USD,Any numeric,Property NOI for quarter using participant accounting,Ledger tie required,1123000
+allocation_method,Documentation,Yes,Category,None,Direct|Time|Activity|Active units|Total units|Mixed,Primary method used for shared costs,Must use allowed value or explain Mixed,Activity
+attribution_method,Documentation,No,Category,None,First touch|Last touch|Multi-touch|Self-reported|Mixed|None,Method used for attributed_new_leases,Required when attributed_new_leases supplied,First touch
+source_notes,Documentation,Yes,Text,None,Plain text without confidential identifiers,Source reports allocation rates exceptions and accounting definitions,No resident applicant employee or unit details,GL tied; central labor allocated by executed leases

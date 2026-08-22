@@ -12,8 +12,8 @@ const metricLayers = [
   {
     number: "02",
     name: "Acquisition CPL",
-    formula: "Demand-generation costs ÷ incremental leases",
-    detail: "A complete view of what it takes to create new demand.",
+    formula: "Demand-generation costs ÷ executed new leases",
+    detail: "The full reported cost of creating new demand.",
   },
   {
     number: "03",
@@ -24,8 +24,8 @@ const metricLayers = [
   {
     number: "04",
     name: "Economic CPL",
-    formula: "Marginal economic cost ÷ new + renewed leases",
-    detail: "The truest measure of profitable, durable occupancy.",
+    formula: "Fully loaded cost + vacancy + turnover ÷ new leases",
+    detail: "The period economics behind creating new occupancy.",
   },
 ];
 
@@ -179,8 +179,9 @@ export default function Home() {
           <span>Related measure</span>
           <strong>Cost Per Occupied Unit</strong>
           <p>
-            The cost of maintaining revenue-producing occupancy over a defined
-            period—so renewals and retention receive the weight they deserve.
+            The cost of creating and maintaining revenue-producing occupancy over
+            a defined period—reported alongside Renewal CPL so acquisition and
+            retention remain economically distinct.
           </p>
         </div>
       </section>
